@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Натяжные потолки от 350 ₽/м² | Установка за 1 день</title>
+    <meta name="description" content="Натяжные потолки под ключ. Гарантия 15 лет. Замер бесплатно. Установка за 3-4 часа.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .logo { font-size: 24px; font-weight: bold; }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ff6b35;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        .header-phone:hover { background: #e85a2a; transform: translateY(-2px); }
+        .header-phone .icon { font-size: 22px; animation: ring 2s infinite; }
+        @keyframes ring {
+            0%, 100% { transform: rotate(0); }
+            10%, 30% { transform: rotate(-15deg); }
+            20%, 40% { transform: rotate(15deg); }
+            50% { transform: rotate(0); }
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), 
+                        url('https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1600') center/cover;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 22px; margin-bottom: 30px; }
+        .hero .price { font-size: 28px; color: #ffd700; font-weight: bold; margin: 20px 0; }
+        
+        .hero-phone {
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px dashed rgba(255,255,255,0.5);
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+        .hero-phone:hover { color: #ffd700; }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        .btn:hover { background: #e85a2a; transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: white; color: #1e3c72; }
+        
+        .floating-call {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 65px;
+            height: 65px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            animation: pulse 2s infinite;
+            transition: transform 0.3s;
+        }
+        .floating-call:hover { transform: scale(1.1); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .services { padding: 80px 0; }
+        .section-title { text-align: center; font-size: 36px; margin-bottom: 50px; color: #1e3c72; }
+        
+        .services-row {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        .services-row.main {
+            grid-template-columns: 1fr;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+        }
+        .services-row.extra {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .service-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s;
+            background: white;
+        }
+        .service-card:hover {
+            border-color: #ff6b35;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+        .service-card .icon { font-size: 42px; margin-bottom: 12px; }
+        .service-card h3 { color: #1e3c72; margin-bottom: 10px; font-size: 20px; }
+        .service-card p { color: #666; font-size: 14px; margin-bottom: 12px; }
+        .service-price { font-size: 24px; color: #ff6b35; font-weight: bold; }
+        
+        .service-card-main {
+            padding: 40px 30px !important;
+            background: linear-gradient(135deg, #fff 0%, #fff8f4 100%) !important;
+            border: 2px solid #ff6b35 !important;
+        }
+        .service-card-main h3 {
+            font-size: 28px !important;
+            margin-bottom: 15px !important;
+        }
+        .service-card-main .service-price {
+            font-size: 32px !important;
+            margin-top: 15px;
+        }
+        .fabric-types {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .fabric-types span {
+            background: #ff6b35;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 900px) {
+            .services-row.extra { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .services-row.extra { grid-template-columns: 1fr; }
+        }
+        
+        .calculator {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        }
+        .calc-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .calc-form { padding: 40px; }
+        .calc-result {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .calc-group { margin-bottom: 25px; }
+        .calc-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e3c72;
+            font-size: 15px;
+        }
+        .calc-options { display: grid; gap: 8px; }
+        .calc-option { position: relative; }
+        .calc-option input { display: none; }
+        .calc-option label {
+            display: block;
+            padding: 16px;
+            border: 2px solid #ff6b35;
+            background: #fff4ef;
+            color: #ff6b35;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+            margin: 0;
+        }
+        .calc-option label small {
+            display: block;
+            margin-top: 4px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .calc-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .calc-input:focus { border-color: #ff6b35; }
+        .calc-checkboxes { display: flex; flex-direction: column; gap: 10px; }
+        .calc-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .calc-checkbox:hover { background: #fff4ef; }
+        .calc-checkbox input { width: 18px; height: 18px; cursor: pointer; }
+        .calc-checkbox-label { flex: 1; font-size: 14px; }
+        .calc-checkbox-price { color: #ff6b35; font-weight: 600; font-size: 14px; white-space: nowrap; }
+        
+        .result-title { font-size: 18px; opacity: 0.9; margin-bottom: 10px; }
+        .result-price {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .result-details {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .result-row:last-child { border-bottom: none; }
+        .result-note {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .calc-wrapper { grid-template-columns: 1fr; }
+            .calc-form, .calc-result { padding: 25px; }
+            .result-price { font-size: 36px; }
+        }
+        
+        .gallery { padding: 80px 0; background: #f8f9fa; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover img { transform: scale(1.08); }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal.active { display: flex; }
+        .modal img { max-width: 90%; max-height: 90vh; border-radius: 10px; }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .steps { padding: 80px 0; }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .step { text-align: center; }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        .cta-form {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        .form-wrapper { max-width: 600px; margin: 0 auto; text-align: center; }
+        .form-wrapper h2 { font-size: 32px; margin-bottom: 20px; }
+        .form-wrapper p { margin-bottom: 30px; font-size: 18px; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input[type="text"], input[type="tel"] {
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .calc-summary {
+            background: rgba(255, 215, 0, 0.15);
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            display: none;
+        }
+        .calc-summary.active { display: block; }
+        .calc-summary-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        .calc-summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .calc-summary-row:last-of-type { border-bottom: none; }
+        .calc-summary-total {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 2px solid rgba(255,215,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        .calc-summary-total .amount { font-size: 24px; color: #ffd700; }
+        .calc-summary-edit {
+            color: #ffd700;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 13px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        footer a { color: #ff6b35; text-decoration: none; font-weight: bold; }
+        .footer-phone { font-size: 24px; margin: 15px 0; }
+        
+        .toast {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1001;
+            opacity: 0;
+            transform: translateX(120%);
+            transition: all 0.4s;
+        }
+        .toast.show { opacity: 1; transform: translateX(0); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 18px; }
+            .hero-phone { font-size: 26px; }
+            .section-title { font-size: 28px; }
+            .header-phone { padding: 8px 15px; font-size: 15px; }
+            .header-phone .icon { font-size: 18px; }
+            .floating-call { width: 55px; height: 55px; font-size: 26px; bottom: 15px; right: 15px; }
+            .service-card-main h3 { font-size: 24px !important; }
+            .service-card-main .service-price { font-size: 26px !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">🏠 Потолок +</div>
+        <a href="tel:+79147981371+79147981371 class="header-phone">
+            <span class="icon">📞</span>
+            <span>+79147981371</span>
+        </a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Натяжные потолки под ключ</h1>
+        <p>Установка за 1 день • Гарантия 15 лет • Замер бесплатно</p>
+        <div class="price">от 350 ₽ за м²</div>
+        
+        <a href="tel:+79147981371" class="hero-phone">📞 +79147981371</a>
+        
+        <div class="hero-buttons">
+            <a href="#calculator" class="btn">Рассчитать стоимость</a>
+            <a href="tel:+79147981371" class="btn btn-outline">Позвонить сейчас</a>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        
+        <div class="services-row main">
+            <div class="service-card service-card-main">
+                <div class="icon">🏠</div>
+                <h3>Натяжные потолки</h3>
+                <div class="fabric-types">
+                    <span>Матовый</span>
+                    <span>Глянцевый</span>
+                    <span>Сатиновый</span>
+                </div>
+                <p>Качественное полотно от ведущих производителей. Любой цвет на выбор — более 300 оттенков.</p>
+                <div class="service-price">от 350 ₽/м²</div>
+                <a href="#calculator" class="btn" style="margin-top:15px;">Рассчитать</a>
+            </div>
+        </div>
+        
+        <div class="services-row extra">
+            <div class="service-card">
+                <div class="icon">🔲</div>
+                <h3>Теневые профили</h3>
+                <p>Эффект парящего потолка без видимого крепления</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">💡</div>
+                <h3>Световые линии</h3>
+                <p>Дизайнерское решение со встроенной подсветкой</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🧲</div>
+                <h3>Магнитные треки</h3>
+                <p>Современное освещение с гибкой настройкой</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">✨</div>
+                <h3>Парящие потолки</h3>
+                <p>Контурная LED-подсветка по периметру</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="calculator" id="calculator">
+    <div class="container">
+        <h2 class="section-title">Калькулятор стоимости</h2>
+        <p style="text-align:center; margin-bottom:40px; font-size:18px; color:#666;">
+            Узнайте примерную цену за 30 секунд
+        </p>
+        
+        <div class="calc-wrapper">
+            <div class="calc-form">
+                <div class="calc-group">
+                    <label>Тип потолка</label>
+                    <div class="calc-options">
+                        <div class="calc-option">
+                            <input type="radio" name="type" id="type1" value="350" data-name="Натяжной потолок" checked>
+                            <label for="type1">Матовый, Глянцевый, Сатиновый<br><small>350 ₽/м²</small></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-group">
+                    <label for="area">Площадь потолка (м²)</label>
+                    <input type="number" id="area" class="calc-input" value="20" min="1" max="500">
+                </div>
+                
+                <div class="calc-group">
+                    <label for="corners">Количество углов</label>
+                    <input type="number" id="corners" class="calc-input" value="4" min="3" max="20">
+                </div>
+                
+                <div class="calc-group">
+                    <label>Дополнительные опции</label>
+                    <div class="calc-checkboxes">
+                        <label class="calc-checkbox">
+                            <input type="checkbox" class="extra" data-price="2500" data-name="Точечные светильники">
+                            <span class="calc-checkbox-label">Точечные светильники</span>
+                            <span class="calc-checkbox-price">+2 500 ₽</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" class="extra" data-price="4000" data-name="Установка люстры">
+                            <span class="calc-checkbox-label">Люстра (установка)</span>
+                            <span class="calc-checkbox-price">+4 000 ₽</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" class="extra" data-price="650" data-per-meter="true" data-name="Парящий потолок (под ключ)">
+                            <span class="calc-checkbox-label">Парящий потолок (под ключ)</span>
+                            <span class="calc-checkbox-price">+650 ₽/м</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" class="extra" data-price="3500" data-name="Обход труб">
+                            <span class="calc-checkbox-label">Обход труб (за 1 шт)</span>
+                            <span class="calc-checkbox-price">+3 500 ₽</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" class="extra" data-price="450" data-per-meter="true" data-name="Накладной пластиковый карниз">
+                            <span class="calc-checkbox-label">Накладной пластиковый карниз</span>
+                            <span class="calc-checkbox-price">+450 ₽/м</span>
+                        </label>
+                        <label class="calc-checkbox">
+                            <input type="checkbox" class="extra" data-price="850" data-per-meter="true" data-name="Встроенный алюминиевый карниз">
+                            <span class="calc-checkbox-label">Встроенный алюминиевый карниз</span>
+                            <span class="calc-checkbox-price">+850 ₽/м</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calc-result">
+                <div class="result-title">Предварительная стоимость:</div>
+                <div class="result-price" id="totalPrice">7 000 ₽</div>
+                
+                <div class="result-details">
+                    <div class="result-row">
+                        <span>Полотно:</span>
+                        <span id="materialPrice">7 000 ₽</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Площадь:</span>
+                        <span id="areaDisplay">20 м²</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Доп. опции:</span>
+                        <span id="extrasPrice">0 ₽</span>
+                    </div>
+                </div>
+                
+                <button onclick="sendToForm()" class="btn" style="background:#ffd700; color:#1e3c72; text-align:center; border:none; cursor:pointer;">
+                    Оставить заявку с этим расчётом →
+                </button>
+                
+                <div class="result-note">
+                    * Окончательная цена определяется после бесплатного замера
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <h2 class="section-title">Наши работы</h2>
+        <p style="text-align:center; margin-bottom:40px; font-size:18px; color:#666;">
+            Более 1500 успешно реализованных проектов
+        </p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565183997392-2f6f122e5912?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600" alt="Натяжной потолок"></div>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <img id="modalImg" src="" alt="">
+</div>
+
+<section class="steps">
+    <div class="container">
+        <h2 class="section-title">Как мы работаем</h2>
+        <div class="steps-grid">
+            <div class="step"><div class="step-number">1</div><h3>Заявка</h3><p>Оставляете заявку на сайте или звоните</p></div>
+            <div class="step"><div class="step-number">2</div><h3>Замер</h3><p>Бесплатный выезд замерщика</p></div>
+            <div class="step"><div class="step-number">3</div><h3>Договор</h3><p>Фиксируем цену и сроки</p></div>
+            <div class="step"><div class="step-number">4</div><h3>Монтаж</h3><p>Установка за 3-4 часа</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-form" id="form">
+    <div class="container">
+        <div class="form-wrapper">
+            <h2 id="formTitle">Получите расчёт стоимости</h2>
+            <p id="formSubtitle">Оставьте заявку — перезвоним за 15 минут и сделаем точный расчёт</p>
+            
+            <div class="calc-summary" id="calcSummary">
+                <div class="calc-summary-title">📋 Ваш расчёт из калькулятора:</div>
+                <div id="summaryRows"></div>
+                <div class="calc-summary-total">
+                    <span>Итого:</span>
+                    <span class="amount" id="summaryTotal">0 ₽</span>
+                </div>
+                <button type="button" class="calc-summary-edit" onclick="editCalc()">✎ Изменить расчёт</button>
+            </div>
+            
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" id="userName" placeholder="Ваше имя" required>
+                <input type="tel" id="userPhone" placeholder="Телефон" required>
+                <input type="hidden" id="calcData" name="calc_data" value="">
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Потолок +. Все права защищены.</p>
+        <div class="footer-phone">📞 <a href="tel:+79147981371">+79147981371</a></div>
+        <p>📧 iskream8@gmail.com</p>
+    </div>
+</footer>
+
+<a href="tel:+79147981371" class="floating-call" title="Позвонить">📞</a>
+
+<div class="toast" id="toast">✓ Расчёт добавлен в заявку</div>
+
+<script>
+let currentCalc = {};
+
+function calculatePrice() {
+    const typeInput = document.querySelector('input[name="type"]:checked');
+    const type = parseFloat(typeInput.value);
+    const typeName = typeInput.dataset.name;
+    const area = parseFloat(document.getElementById('area').value) || 0;
+    const corners = parseFloat(document.getElementById('corners').value) || 4;
+    
+    const materialCost = type * area;
+    const extraCorners = Math.max(0, corners - 4) * 200;
+    
+    const extras = [];
+    let extrasCost = 0;
+    document.querySelectorAll('.extra:checked').forEach(cb => {
+        const price = parseFloat(cb.dataset.price);
+        const name = cb.dataset.name;
+        let cost = price;
+        let displayName = name;
+        if (cb.dataset.perMeter === 'true') {
+            const perimeter = 4 * Math.sqrt(area);
+            cost = price * perimeter;
+            displayName = name + ` (~${Math.round(perimeter)} м)`;
+        }
+        extras.push({ name: displayName, cost: Math.round(cost) });
+        extrasCost += cost;
+    });
+    
+    const total = materialCost + extraCorners + extrasCost;
+    
+    currentCalc = {
+        typeName, typePrice: type, area, corners,
+        materialCost: Math.round(materialCost + extraCorners),
+        extras, extrasCost: Math.round(extrasCost),
+        total: Math.round(total)
+    };
+    
+    const fmt = (n) => Math.round(n).toLocaleString('ru-RU') + ' ₽';
+    document.getElementById('totalPrice').textContent = fmt(total);
+    document.getElementById('materialPrice').textContent = fmt(materialCost + extraCorners);
+    document.getElementById('areaDisplay').textContent = area + ' м²';
+    document.getElementById('extrasPrice').textContent = fmt(extrasCost);
+    
+    if (document.getElementById('calcSummary').classList.contains('active')) {
+        renderSummary();
+    }
+}
+
+document.querySelectorAll('input[name="type"], #area, #corners, .extra').forEach(el => {
+    el.addEventListener('input', calculatePrice);
+    el.addEventListener('change', calculatePrice);
+});
+calculatePrice();
+
+function renderSummary() {
+    const fmt = (n) => n.toLocaleString('ru-RU') + ' ₽';
+    let html = `
+        <div class="calc-summary-row"><span>Тип потолка:</span><span><b>${currentCalc.typeName}</b> (${currentCalc.typePrice} ₽/м²)</span></div>
+        <div class="calc-summary-row"><span>Площадь:</span><span><b>${currentCalc.area} м²</b></span></div>
+        <div class="calc-summary-row"><span>Углов:</span><span><b>${currentCalc.corners}</b></span></div>
+        <div class="calc-summary-row"><span>Полотно + работа:</span><span>${fmt(currentCalc.materialCost)}</span></div>
+    `;
+    if (currentCalc.extras.length > 0) {
+        currentCalc.extras.forEach(e => {
+            html += `<div class="calc-summary-row"><span>+ ${e.name}:</span><span>${fmt(e.cost)}</span></div>`;
+        });
+    }
+    document.getElementById('summaryRows').innerHTML = html;
+    document.getElementById('summaryTotal').textContent = fmt(currentCalc.total);
+    
+    const calcText = `Тип: ${currentCalc.typeName}\nПлощадь: ${currentCalc.area} м²\nУглов: ${currentCalc.corners}\nПолотно+работа: ${currentCalc.materialCost} ₽\nДоп.опции: ${currentCalc.extras.map(e => `${e.name} = ${e.cost} ₽`).join('; ') || 'нет'}\nИТОГО: ${currentCalc.total} ₽`;
+    document.getElementById('calcData').value = calcText;
+}
+
+function sendToForm() {
+    document.getElementById('calcSummary').classList.add('active');
+    renderSummary();
+    document.getElementById('formTitle').textContent = 'Подтвердите заявку на замер';
+    document.getElementById('formSubtitle').textContent = 'Оставьте контакты — перезвоним за 15 минут и уточним детали';
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+    setTimeout(() => document.getElementById('userName').focus(), 800);
+}
+
+function editCalc() {
+    document.getElementById('calcSummary').classList.remove('active');
+    document.getElementById('formTitle').textContent = 'Получите расчёт стоимости';
+    document.getElementById('formSubtitle').textContent = 'Оставьте заявку — перезвоним за 15 минут и сделаем точный расчёт';
+    document.getElementById('calcData').value = '';
+    document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('userName').value;
+    const phone = document.getElementById('userPhone').value;
+    const calcData = document.getElementById('calcData').value;
+    let message = `Заявка от ${name}\nТелефон: ${phone}`;
+    if (calcData) message += `\n\n--- РАСЧЁТ ИЗ КАЛЬКУЛЯТОРА ---\n${calcData}`;
+    console.log(message);
+    alert('Спасибо! Мы свяжемся с вами в ближайшее время.\n\n' + message);
+    e.target.reset();
+    document.getElementById('calcSummary').classList.remove('active');
+    document.getElementById('formTitle').textContent = 'Получите расчёт стоимости';
+    document.getElementById('formSubtitle').textContent = 'Оставьте заявку — перезвоним за 15 минут и сделаем точный расчёт';
+}
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        modalImg.src = img.src.replace('w=600', 'w=1600');
+        modal.classList.add('active');
+    });
+});
+function closeModal() { modal.classList.remove('active'); }
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>

@@ -1,848 +1,726 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Натяжные потолки от 350 ₽/м² | Установка за 1 день</title>
-    <meta name="description" content="Натяжные потолки под ключ. Гарантия 15 лет. Замер бесплатно. Установка за 3-4 часа.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; }
-        
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .logo { font-size: 24px; font-weight: bold; }
-        
-        .header-phone {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #ff6b35;
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-        }
-        .header-phone:hover { background: #e85a2a; transform: translateY(-2px); }
-        .header-phone .icon { font-size: 22px; animation: ring 2s infinite; }
-        @keyframes ring {
-            0%, 100% { transform: rotate(0); }
-            10%, 30% { transform: rotate(-15deg); }
-            20%, 40% { transform: rotate(15deg); }
-            50% { transform: rotate(0); }
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), 
-                        url('https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1600') center/cover;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .hero h1 { font-size: 48px; margin-bottom: 20px; }
-        .hero p { font-size: 22px; margin-bottom: 30px; }
-        .hero .price { font-size: 28px; color: #ffd700; font-weight: bold; margin: 20px 0; }
-        
-        .hero-phone {
-            display: inline-block;
-            margin: 20px 0;
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px dashed rgba(255,255,255,0.5);
-            padding-bottom: 5px;
-            transition: color 0.3s;
-        }
-        .hero-phone:hover { color: #ffd700; }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #ff6b35;
-            color: white;
-            padding: 18px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-        }
-        .btn:hover { background: #e85a2a; transform: translateY(-2px); }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            box-shadow: none;
-        }
-        .btn-outline:hover { background: white; color: #1e3c72; }
-        
-        .floating-call {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 65px;
-            height: 65px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 30px;
-            text-decoration: none;
-            z-index: 999;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
-            animation: pulse 2s infinite;
-            transition: transform 0.3s;
-        }
-        .floating-call:hover { transform: scale(1.1); }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-        
-        .services { padding: 80px 0; }
-        .section-title { text-align: center; font-size: 36px; margin-bottom: 50px; color: #1e3c72; }
-        
-        .services-row {
-            display: grid;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        .services-row.main {
-            grid-template-columns: 1fr;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 25px;
-        }
-        .services-row.extra {
-            grid-template-columns: repeat(4, 1fr);
-        }
-        
-        .service-card {
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 30px 20px;
-            text-align: center;
-            transition: all 0.3s;
-            background: white;
-        }
-        .service-card:hover {
-            border-color: #ff6b35;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
-        }
-        .service-card .icon { font-size: 42px; margin-bottom: 12px; }
-        .service-card h3 { color: #1e3c72; margin-bottom: 10px; font-size: 20px; }
-        .service-card p { color: #666; font-size: 14px; margin-bottom: 12px; }
-        .service-price { font-size: 24px; color: #ff6b35; font-weight: bold; }
-        
-        .service-card-main {
-            padding: 40px 30px !important;
-            background: linear-gradient(135deg, #fff 0%, #fff8f4 100%) !important;
-            border: 2px solid #ff6b35 !important;
-        }
-        .service-card-main h3 {
-            font-size: 28px !important;
-            margin-bottom: 15px !important;
-        }
-        .service-card-main .service-price {
-            font-size: 32px !important;
-            margin-top: 15px;
-        }
-        .fabric-types {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-        .fabric-types span {
-            background: #ff6b35;
-            color: white;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 900px) {
-            .services-row.extra { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .services-row.extra { grid-template-columns: 1fr; }
-        }
-        
-        .calculator {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-        }
-        .calc-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .calc-form { padding: 40px; }
-        .calc-result {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .calc-group { margin-bottom: 25px; }
-        .calc-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #1e3c72;
-            font-size: 15px;
-        }
-        .calc-options { display: grid; gap: 8px; }
-        .calc-option { position: relative; }
-        .calc-option input { display: none; }
-        .calc-option label {
-            display: block;
-            padding: 16px;
-            border: 2px solid #ff6b35;
-            background: #fff4ef;
-            color: #ff6b35;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.2s;
-            margin: 0;
-        }
-        .calc-option label small {
-            display: block;
-            margin-top: 4px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        .calc-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .calc-input:focus { border-color: #ff6b35; }
-        .calc-checkboxes { display: flex; flex-direction: column; gap: 10px; }
-        .calc-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .calc-checkbox:hover { background: #fff4ef; }
-        .calc-checkbox input { width: 18px; height: 18px; cursor: pointer; }
-        .calc-checkbox-label { flex: 1; font-size: 14px; }
-        .calc-checkbox-price { color: #ff6b35; font-weight: 600; font-size: 14px; white-space: nowrap; }
-        
-        .result-title { font-size: 18px; opacity: 0.9; margin-bottom: 10px; }
-        .result-price {
-            font-size: 48px;
-            font-weight: bold;
-            color: #ffd700;
-            margin-bottom: 20px;
-            line-height: 1;
-        }
-        .result-details {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-        .result-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            font-size: 14px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .result-row:last-child { border-bottom: none; }
-        .result-note {
-            font-size: 13px;
-            opacity: 0.8;
-            margin-top: 15px;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .calc-wrapper { grid-template-columns: 1fr; }
-            .calc-form, .calc-result { padding: 25px; }
-            .result-price { font-size: 36px; }
-        }
-        
-        .gallery { padding: 80px 0; background: #f8f9fa; }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 10px;
-            cursor: pointer;
-            aspect-ratio: 4/3;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .gallery-item:hover img { transform: scale(1.08); }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .modal.active { display: flex; }
-        .modal img { max-width: 90%; max-height: 90vh; border-radius: 10px; }
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-        
-        .steps { padding: 80px 0; }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        .step { text-align: center; }
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #ff6b35;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 auto 15px;
-        }
-        
-        .cta-form {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-        }
-        .form-wrapper { max-width: 600px; margin: 0 auto; text-align: center; }
-        .form-wrapper h2 { font-size: 32px; margin-bottom: 20px; }
-        .form-wrapper p { margin-bottom: 30px; font-size: 18px; }
-        form { display: flex; flex-direction: column; gap: 15px; }
-        input[type="text"], input[type="tel"] {
-            padding: 15px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            outline: none;
-        }
-        
-        .calc-summary {
-            background: rgba(255, 215, 0, 0.15);
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: left;
-            display: none;
-        }
-        .calc-summary.active { display: block; }
-        .calc-summary-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ffd700;
-            margin-bottom: 15px;
-        }
-        .calc-summary-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            font-size: 14px;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-        }
-        .calc-summary-row:last-of-type { border-bottom: none; }
-        .calc-summary-total {
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 2px solid rgba(255,215,0,0.5);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-        }
-        .calc-summary-total .amount { font-size: 24px; color: #ffd700; }
-        .calc-summary-edit {
-            color: #ffd700;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 13px;
-            background: none;
-            border: none;
-            padding: 0;
-            margin-top: 10px;
-        }
-        
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        footer a { color: #ff6b35; text-decoration: none; font-weight: bold; }
-        .footer-phone { font-size: 24px; margin: 15px 0; }
-        
-        .toast {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: #28a745;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 1001;
-            opacity: 0;
-            transform: translateX(120%);
-            transition: all 0.4s;
-        }
-        .toast.show { opacity: 1; transform: translateX(0); }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 18px; }
-            .hero-phone { font-size: 26px; }
-            .section-title { font-size: 28px; }
-            .header-phone { padding: 8px 15px; font-size: 15px; }
-            .header-phone .icon { font-size: 18px; }
-            .floating-call { width: 55px; height: 55px; font-size: 26px; bottom: 15px; right: 15px; }
-            .service-card-main h3 { font-size: 24px !important; }
-            .service-card-main .service-price { font-size: 26px !important; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Потолок+ — Натяжные потолки премиум-класса</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary: #1e88e5;
+    --primary-light: #4fc3f7;
+    --primary-dark: #0d47a1;
+    --accent: #ff6b1a;
+    --accent-dark: #e55a0f;
+    --dark: #0a1628;
+    --dark-blue: #142440;
+    --silver: #c5d3e0;
+    --gray: #7a8a9a;
+    --light: #f0f5fa;
+    --white: #ffffff;
+    --2gis: #19b362;
+    --2gis-dark: #0e8a48;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: var(--white);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+header {
+    position: fixed; top: 0; width: 100%;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+
+.logo { display: block; text-decoration: none; }
+.logo svg { height: 65px; width: auto; display: block; }
+.footer-logo svg { height: 75px; }
+
+.nav-links { display: flex; gap: 35px; list-style: none; }
+.nav-links a { color: var(--silver); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+.phone-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: white; padding: 12px 24px; border-radius: 50px;
+    text-decoration: none; font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.phone-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 107, 26, 0.5); }
+
+/* HERO */
+.hero {
+    min-height: 100vh; display: flex; align-items: center;
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 50%, var(--primary-dark) 100%);
+    padding: 100px 0 60px; position: relative; overflow: hidden;
+    color: var(--white);
+}
+.hero::before {
+    content: ''; position: absolute; top: -50%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(30, 136, 229, 0.3), transparent);
+    border-radius: 50%;
+}
+.hero::after {
+    content: ''; position: absolute; bottom: -30%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255, 107, 26, 0.2), transparent);
+    border-radius: 50%;
+}
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+.hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: var(--white); }
+.hero h1 span {
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero p { font-size: 19px; color: var(--silver); margin-bottom: 35px; }
+.hero-features { display: flex; gap: 30px; margin-bottom: 35px; flex-wrap: wrap; }
+.hero-feature { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--white); }
+.hero-feature::before {
+    content: '✓'; width: 28px; height: 28px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+}
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: white; padding: 18px 40px; border-radius: 50px;
+    text-decoration: none; font-weight: 700; font-size: 17px;
+    border: none; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255, 107, 26, 0.5); }
+.hero-image {
+    background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800') center/cover;
+    height: 500px; border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(79, 195, 247, 0.3);
+}
+
+/* SECTIONS */
+section { padding: 100px 0; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 42px; font-weight: 800; margin-bottom: 15px; color: var(--dark); }
+.section-title h2 span { color: var(--accent); }
+.section-title p { color: var(--gray); font-size: 18px; }
+
+/* ADVANTAGES */
+.advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.advantage-card {
+    background: white; padding: 40px 30px; border-radius: 25px; text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 2px solid var(--light);
+}
+.advantage-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(30, 136, 229, 0.2); border-color: var(--primary-light); }
+.advantage-icon {
+    width: 70px; height: 70px;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin: 0 auto 20px;
+    box-shadow: 0 10px 25px rgba(30, 136, 229, 0.3);
+}
+.advantage-card h3 { font-size: 20px; margin-bottom: 12px; color: var(--dark); }
+.advantage-card p { color: var(--gray); font-size: 15px; }
+
+/* GALLERY */
+.gallery { background: var(--light); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.gallery-item {
+    position: relative; border-radius: 20px; overflow: hidden; height: 280px; cursor: pointer;
+    box-shadow: 0 10px 30px rgba(10, 22, 40, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.gallery-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(10, 22, 40, 0.2); }
+.gallery-img { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s; }
+.gallery-item:hover .gallery-img { transform: scale(1.1); }
+.gallery-overlay {
+    position: absolute; inset: 0; background: rgba(10, 22, 40, 0);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.3s;
+}
+.gallery-item:hover .gallery-overlay { background: rgba(10, 22, 40, 0.5); }
+.gallery-zoom {
+    width: 60px; height: 60px; background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; opacity: 0; transform: scale(0.5);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.gallery-item:hover .gallery-zoom { opacity: 1; transform: scale(1); }
+
+/* MODAL */
+.modal {
+    display: none; position: fixed; inset: 0;
+    background: rgba(10, 22, 40, 0.95); z-index: 2000;
+    align-items: center; justify-content: center;
+    padding: 20px; cursor: pointer;
+}
+.modal.active { display: flex; }
+.modal-img { max-width: 90%; max-height: 90vh; border-radius: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
+.modal-close {
+    position: absolute; top: 30px; right: 30px;
+    width: 50px; height: 50px;
+    background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; cursor: pointer; border: none;
+}
+
+/* STAGES */
+.stages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; counter-reset: step; }
+.stage-card { text-align: center; position: relative; counter-increment: step; }
+.stage-card::before {
+    content: counter(step, decimal-leading-zero);
+    font-size: 80px; font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.3; line-height: 1;
+}
+.stage-card h3 { font-size: 22px; margin: -20px 0 12px; position: relative; color: var(--dark); }
+.stage-card p { color: var(--gray); }
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 50%, var(--primary-dark) 100%);
+    color: white; text-align: center;
+    border-radius: 30px; margin: 50px 20px; padding: 80px 40px;
+    position: relative; overflow: hidden;
+}
+.cta::before {
+    content: ''; position: absolute; top: -50%; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 26, 0.3), transparent);
+    border-radius: 50%;
+}
+.cta::after {
+    content: ''; position: absolute; bottom: -50%; left: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(79, 195, 247, 0.25), transparent);
+    border-radius: 50%;
+}
+.cta h2 { font-size: 42px; margin-bottom: 20px; position: relative; color: var(--white); }
+.cta h2 span { color: var(--accent); }
+.cta p { font-size: 19px; margin-bottom: 35px; color: var(--silver); position: relative; }
+.cta-form { display: flex; gap: 15px; max-width: 600px; margin: 0 auto; flex-wrap: wrap; justify-content: center; position: relative; }
+.cta-form input { flex: 1; min-width: 250px; padding: 18px 25px; border: none; border-radius: 50px; font-size: 16px; outline: none; }
+.cta-form button {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: white; padding: 18px 40px; border: none; border-radius: 50px;
+    font-size: 16px; font-weight: 700; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta-form button:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 107, 26, 0.5); }
+
+/* REVIEWS - 2ГИС */
+.reviews-2gis-banner {
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    background: linear-gradient(135deg, #e8f9f0, #d4f4e2);
+    border-radius: 25px; padding: 35px 45px; margin-bottom: 50px;
+    border: 2px solid #b8ebcc; flex-wrap: wrap;
+}
+.reviews-2gis-info { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
+.reviews-2gis-logo {
+    width: 75px; height: 75px;
+    background: linear-gradient(135deg, var(--2gis), var(--2gis-dark));
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 800; font-size: 26px;
+    box-shadow: 0 10px 25px rgba(25, 179, 98, 0.3);
+    flex-shrink: 0;
+}
+.reviews-2gis-text { display: flex; flex-direction: column; }
+.reviews-2gis-rating { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.reviews-2gis-score { font-size: 42px; font-weight: 800; color: var(--2gis-dark); line-height: 1; }
+.reviews-2gis-stars { color: #ffa726; font-size: 22px; letter-spacing: 2px; }
+.reviews-2gis-count { color: var(--dark); font-size: 16px; font-weight: 500; }
+.reviews-2gis-count strong { color: var(--2gis-dark); font-weight: 700; }
+.reviews-2gis-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--2gis), var(--2gis-dark));
+    color: white; padding: 16px 32px; border-radius: 50px;
+    text-decoration: none; font-weight: 700; font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s; white-space: nowrap;
+}
+.reviews-2gis-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(25, 179, 98, 0.5); }
+
+/* Карточки отзывов */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.review-card {
+    background: white; padding: 30px; border-radius: 25px;
+    border: 2px solid var(--light);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+}
+.review-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(25, 179, 98, 0.15); border-color: var(--2gis); }
+.review-source {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--2gis); color: white;
+    padding: 5px 12px; border-radius: 8px;
+    font-weight: 800; font-size: 12px; letter-spacing: 0.5px;
+}
+.review-stars { color: #ffa726; font-size: 18px; margin-bottom: 12px; letter-spacing: 2px; }
+.review-date { color: var(--gray); font-size: 13px; margin-bottom: 15px; }
+.review-text { color: var(--dark); margin-bottom: 25px; font-size: 15px; line-height: 1.6; }
+.review-author { display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--light); }
+.review-avatar {
+    width: 45px; height: 45px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--2gis), var(--2gis-dark));
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px;
+}
+.review-author strong { display: block; color: var(--dark); font-size: 15px; }
+.review-author span { color: var(--gray); font-size: 13px; }
+.reviews-cta { text-align: center; margin-top: 50px; }
+.reviews-cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: white; color: var(--2gis-dark);
+    border: 2px solid var(--2gis); padding: 16px 36px; border-radius: 50px;
+    text-decoration: none; font-weight: 700; font-size: 16px;
+    transition: all 0.3s;
+}
+.reviews-cta-btn:hover { background: var(--2gis); color: white; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(25, 179, 98, 0.4); }
+
+/* СОСТОЯНИЯ ЗАГРУЗКИ */
+.reviews-loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray);
+}
+.reviews-loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--light);
+    border-top-color: var(--2gis);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.reviews-error {
+    text-align: center;
+    padding: 40px 30px;
+    background: #fff5f5;
+    border: 2px solid #fecaca;
+    border-radius: 20px;
+    color: #991b1b;
+}
+.reviews-error h3 { margin-bottom: 10px; }
+
+/* FOOTER */
+footer { background: var(--dark); color: white; padding: 60px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-col h4 { font-size: 18px; margin-bottom: 20px; color: var(--accent); }
+.footer-col p, .footer-col a {
+    color: var(--silver); text-decoration: none; display: block;
+    margin-bottom: 10px; transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--accent); }
+.footer-about { color: var(--silver); margin-top: 15px; line-height: 1.7; }
+.footer-bottom {
+    border-top: 1px solid rgba(197, 211, 224, 0.1);
+    padding-top: 25px; text-align: center; color: var(--silver);
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+    .hero-grid, .advantages-grid, .stages-grid, .reviews-grid, .footer-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 36px; }
+    .section-title h2, .cta h2 { font-size: 30px; }
+    .nav-links { display: none; }
+    .hero-image { height: 350px; }
+    .logo svg { height: 50px; }
+    .reviews-2gis-banner { flex-direction: column; text-align: center; padding: 30px 20px; }
+    .reviews-2gis-info { flex-direction: column; }
+    .reviews-2gis-score { font-size: 36px; }
+}
+@media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <linearGradient id="topStripe" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#81d4fa"/>
+            <stop offset="100%" stop-color="#1e88e5"/>
+        </linearGradient>
+        <linearGradient id="silverStripe" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="50%" stop-color="#c5d3e0"/>
+            <stop offset="100%" stop-color="#7a8a9a"/>
+        </linearGradient>
+        <linearGradient id="orangeStripe" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffb380"/>
+            <stop offset="50%" stop-color="#ff6b1a"/>
+            <stop offset="100%" stop-color="#cc4a00"/>
+        </linearGradient>
+        <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#e8f4fd"/>
+            <stop offset="30%" stop-color="#4fc3f7"/>
+            <stop offset="55%" stop-color="#ffffff"/>
+            <stop offset="75%" stop-color="#90a4b8"/>
+            <stop offset="100%" stop-color="#5a6b7d"/>
+        </linearGradient>
+        <linearGradient id="plusGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffb380"/>
+            <stop offset="50%" stop-color="#ff6b1a"/>
+            <stop offset="100%" stop-color="#cc4a00"/>
+        </linearGradient>
+    </defs>
+</svg>
+
 <header>
-    <div class="container header-inner">
-        <div class="logo">🏠 Потолок +</div>
-        <a href="tel:+79147981371+79147981371 class="header-phone">
-            <span class="icon">📞</span>
-            <span>+79147981371</span>
-        </a>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">
+                <svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 60 55 Q 240 5 420 55 L 410 70 Q 240 25 70 70 Z" fill="url(#topStripe)"/>
+                    <path d="M 70 70 Q 240 30 410 70 L 400 82 Q 240 47 80 82 Z" fill="url(#silverStripe)"/>
+                    <path d="M 80 82 Q 240 50 400 82 L 395 88 Q 240 58 85 88 Z" fill="#0a1628" opacity="0.6"/>
+                    <path d="M 85 88 Q 240 60 395 88 L 380 100 Q 240 78 100 100 Z" fill="url(#orangeStripe)"/>
+                    <ellipse cx="240" cy="60" rx="80" ry="6" fill="#ffffff" opacity="0.5"/>
+                    <rect x="425" y="35" width="10" height="10" fill="#4fc3f7" transform="rotate(15 430 40)"/>
+                    <rect x="445" y="48" width="8" height="8" fill="#ff6b1a" transform="rotate(25 449 52)"/>
+                    <rect x="438" y="62" width="6" height="6" fill="#1e88e5" transform="rotate(35 441 65)"/>
+                    <rect x="455" y="30" width="5" height="5" fill="#4fc3f7" transform="rotate(45 457 32)"/>
+                    <text x="240" y="135" font-family="Arial Black, Impact, sans-serif" font-size="52" font-weight="900" text-anchor="middle" fill="url(#textGrad)" letter-spacing="2">ПОТОЛОК</text>
+                    <text x="425" y="135" font-family="Arial Black, Impact, sans-serif" font-size="58" font-weight="900" fill="url(#plusGrad)">+</text>
+                    <line x1="130" y1="152" x2="170" y2="152" stroke="#c5d3e0" stroke-width="1"/>
+                    <text x="240" y="156" font-family="Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#c5d3e0" letter-spacing="4">НАТЯЖНЫЕ ПОТОЛКИ</text>
+                    <line x1="310" y1="152" x2="350" y2="152" stroke="#c5d3e0" stroke-width="1"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#gallery">Примеры работ</a></li>
+                <li><a href="#stages">Этапы</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+            </ul>
+            <a href="tel:+74951234567" class="phone-btn">📞 +7 (495) 123-45-67</a>
+        </nav>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <h1>Натяжные потолки под ключ</h1>
-        <p>Установка за 1 день • Гарантия 15 лет • Замер бесплатно</p>
-        <div class="price">от 350 ₽ за м²</div>
-        
-        <a href="tel:+79147981371" class="hero-phone">📞 +79147981371</a>
-        
-        <div class="hero-buttons">
-            <a href="#calculator" class="btn">Рассчитать стоимость</a>
-            <a href="tel:+79147981371" class="btn btn-outline">Позвонить сейчас</a>
+        <div class="hero-grid">
+            <div>
+                <h1>Натяжные потолки <span>премиум-класса</span> за 1 день</h1>
+                <p>Установим идеальный потолок в вашей квартире за один день. Гарантия 15 лет, замер бесплатно.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">Гарантия 15 лет</div>
+                    <div class="hero-feature">Монтаж за 1 день</div>
+                    <div class="hero-feature">Без пыли и мусора</div>
+                </div>
+                <a href="#cta" class="btn-primary">Рассчитать стоимость →</a>
+            </div>
+            <div class="hero-image"></div>
         </div>
     </div>
 </section>
 
-<section class="services">
+<section id="advantages">
     <div class="container">
-        <h2 class="section-title">Наши услуги</h2>
-        
-        <div class="services-row main">
-            <div class="service-card service-card-main">
-                <div class="icon">🏠</div>
-                <h3>Натяжные потолки</h3>
-                <div class="fabric-types">
-                    <span>Матовый</span>
-                    <span>Глянцевый</span>
-                    <span>Сатиновый</span>
-                </div>
-                <p>Качественное полотно от ведущих производителей. Любой цвет на выбор — более 300 оттенков.</p>
-                <div class="service-price">от 350 ₽/м²</div>
-                <a href="#calculator" class="btn" style="margin-top:15px;">Рассчитать</a>
-            </div>
+        <div class="section-title">
+            <h2>Почему выбирают <span>нас</span></h2>
+            <p>Более 5000 довольных клиентов по всей России</p>
         </div>
-        
-        <div class="services-row extra">
-            <div class="service-card">
-                <div class="icon">🔲</div>
-                <h3>Теневые профили</h3>
-                <p>Эффект парящего потолка без видимого крепления</p>
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <div class="advantage-icon">⚡</div>
+                <h3>Монтаж за 3-4 часа</h3>
+                <p>Установим потолок в одной комнате всего за несколько часов</p>
             </div>
-            <div class="service-card">
-                <div class="icon">💡</div>
-                <h3>Световые линии</h3>
-                <p>Дизайнерское решение со встроенной подсветкой</p>
+            <div class="advantage-card">
+                <div class="advantage-icon">🛡️</div>
+                <h3>Гарантия 15 лет</h3>
+                <p>Официальная гарантия на материалы и монтажные работы</p>
             </div>
-            <div class="service-card">
-                <div class="icon">🧲</div>
-                <h3>Магнитные треки</h3>
-                <p>Современное освещение с гибкой настройкой</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">✨</div>
-                <h3>Парящие потолки</h3>
-                <p>Контурная LED-подсветка по периметру</p>
+            <div class="advantage-card">
+                <div class="advantage-icon">💎</div>
+                <h3>Премиум материалы</h3>
+                <p>Используем только сертифицированные полотна из Германии и Франции</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="calculator" id="calculator">
+<section id="gallery" class="gallery">
     <div class="container">
-        <h2 class="section-title">Калькулятор стоимости</h2>
-        <p style="text-align:center; margin-bottom:40px; font-size:18px; color:#666;">
-            Узнайте примерную цену за 30 секунд
-        </p>
-        
-        <div class="calc-wrapper">
-            <div class="calc-form">
-                <div class="calc-group">
-                    <label>Тип потолка</label>
-                    <div class="calc-options">
-                        <div class="calc-option">
-                            <input type="radio" name="type" id="type1" value="350" data-name="Натяжной потолок" checked>
-                            <label for="type1">Матовый, Глянцевый, Сатиновый<br><small>350 ₽/м²</small></label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="calc-group">
-                    <label for="area">Площадь потолка (м²)</label>
-                    <input type="number" id="area" class="calc-input" value="20" min="1" max="500">
-                </div>
-                
-                <div class="calc-group">
-                    <label for="corners">Количество углов</label>
-                    <input type="number" id="corners" class="calc-input" value="4" min="3" max="20">
-                </div>
-                
-                <div class="calc-group">
-                    <label>Дополнительные опции</label>
-                    <div class="calc-checkboxes">
-                        <label class="calc-checkbox">
-                            <input type="checkbox" class="extra" data-price="2500" data-name="Точечные светильники">
-                            <span class="calc-checkbox-label">Точечные светильники</span>
-                            <span class="calc-checkbox-price">+2 500 ₽</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" class="extra" data-price="4000" data-name="Установка люстры">
-                            <span class="calc-checkbox-label">Люстра (установка)</span>
-                            <span class="calc-checkbox-price">+4 000 ₽</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" class="extra" data-price="650" data-per-meter="true" data-name="Парящий потолок (под ключ)">
-                            <span class="calc-checkbox-label">Парящий потолок (под ключ)</span>
-                            <span class="calc-checkbox-price">+650 ₽/м</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" class="extra" data-price="3500" data-name="Обход труб">
-                            <span class="calc-checkbox-label">Обход труб (за 1 шт)</span>
-                            <span class="calc-checkbox-price">+3 500 ₽</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" class="extra" data-price="450" data-per-meter="true" data-name="Накладной пластиковый карниз">
-                            <span class="calc-checkbox-label">Накладной пластиковый карниз</span>
-                            <span class="calc-checkbox-price">+450 ₽/м</span>
-                        </label>
-                        <label class="calc-checkbox">
-                            <input type="checkbox" class="extra" data-price="850" data-per-meter="true" data-name="Встроенный алюминиевый карниз">
-                            <span class="calc-checkbox-label">Встроенный алюминиевый карниз</span>
-                            <span class="calc-checkbox-price">+850 ₽/м</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="calc-result">
-                <div class="result-title">Предварительная стоимость:</div>
-                <div class="result-price" id="totalPrice">7 000 ₽</div>
-                
-                <div class="result-details">
-                    <div class="result-row">
-                        <span>Полотно:</span>
-                        <span id="materialPrice">7 000 ₽</span>
-                    </div>
-                    <div class="result-row">
-                        <span>Площадь:</span>
-                        <span id="areaDisplay">20 м²</span>
-                    </div>
-                    <div class="result-row">
-                        <span>Доп. опции:</span>
-                        <span id="extrasPrice">0 ₽</span>
-                    </div>
-                </div>
-                
-                <button onclick="sendToForm()" class="btn" style="background:#ffd700; color:#1e3c72; text-align:center; border:none; cursor:pointer;">
-                    Оставить заявку с этим расчётом →
-                </button>
-                
-                <div class="result-note">
-                    * Окончательная цена определяется после бесплатного замера
-                </div>
-            </div>
+        <div class="section-title">
+            <h2>Примеры наших <span>работ</span></h2>
+            <p>Реальные фото выполненных проектов</p>
         </div>
-    </div>
-</section>
-
-<section class="gallery">
-    <div class="container">
-        <h2 class="section-title">Наши работы</h2>
-        <p style="text-align:center; margin-bottom:40px; font-size:18px; color:#666;">
-            Более 1500 успешно реализованных проектов
-        </p>
-        
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565183997392-2f6f122e5912?w=600" alt="Натяжной потолок"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600" alt="Натяжной потолок"></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
         </div>
     </div>
 </section>
 
-<div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <img id="modalImg" src="" alt="">
-</div>
-
-<section class="steps">
+<section id="stages">
     <div class="container">
-        <h2 class="section-title">Как мы работаем</h2>
-        <div class="steps-grid">
-            <div class="step"><div class="step-number">1</div><h3>Заявка</h3><p>Оставляете заявку на сайте или звоните</p></div>
-            <div class="step"><div class="step-number">2</div><h3>Замер</h3><p>Бесплатный выезд замерщика</p></div>
-            <div class="step"><div class="step-number">3</div><h3>Договор</h3><p>Фиксируем цену и сроки</p></div>
-            <div class="step"><div class="step-number">4</div><h3>Монтаж</h3><p>Установка за 3-4 часа</p></div>
+        <div class="section-title">
+            <h2>Как мы <span>работаем</span></h2>
+            <p>Прозрачный процесс от заявки до результата</p>
+        </div>
+        <div class="stages-grid">
+            <div class="stage-card"><h3>Заявка</h3><p>Оставьте заявку или позвоните нам по телефону</p></div>
+            <div class="stage-card"><h3>Замер</h3><p>Бесплатный выезд замерщика в удобное время</p></div>
+            <div class="stage-card"><h3>Договор</h3><p>Фиксируем цену и сроки в договоре</p></div>
+            <div class="stage-card"><h3>Монтаж</h3><p>Профессиональная установка за 1 день</p></div>
         </div>
     </div>
 </section>
 
-<section class="cta-form" id="form">
+<section id="cta">
+    <div class="cta">
+        <h2>Получите <span>бесплатный замер</span></h2>
+        <p>Оставьте заявку и наш специалист свяжется с вами в ближайшее время</p>
+        <form class="cta-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <button type="submit">Получить расчёт</button>
+        </form>
+    </div>
+</section>
+
+<!-- ОТЗЫВЫ - ДИНАМИЧЕСКАЯ ЗАГРУЗКА -->
+<section id="reviews">
     <div class="container">
-        <div class="form-wrapper">
-            <h2 id="formTitle">Получите расчёт стоимости</h2>
-            <p id="formSubtitle">Оставьте заявку — перезвоним за 15 минут и сделаем точный расчёт</p>
-            
-            <div class="calc-summary" id="calcSummary">
-                <div class="calc-summary-title">📋 Ваш расчёт из калькулятора:</div>
-                <div id="summaryRows"></div>
-                <div class="calc-summary-total">
-                    <span>Итого:</span>
-                    <span class="amount" id="summaryTotal">0 ₽</span>
-                </div>
-                <button type="button" class="calc-summary-edit" onclick="editCalc()">✎ Изменить расчёт</button>
+        <div class="section-title">
+            <h2>Отзывы <span>клиентов</span></h2>
+            <p>Реальные оценки на 2ГИС</p>
+        </div>
+
+        <!-- Контейнер для динамического контента -->
+        <div id="reviewsContainer">
+            <div class="reviews-loading">
+                <div class="reviews-loading-spinner"></div>
+                <p>Загружаем отзывы...</p>
             </div>
-            
-            <form onsubmit="handleSubmit(event)">
-                <input type="text" id="userName" placeholder="Ваше имя" required>
-                <input type="tel" id="userPhone" placeholder="Телефон" required>
-                <input type="hidden" id="calcData" name="calc_data" value="">
-                <button type="submit" class="btn">Отправить заявку</button>
-            </form>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>© 2025 Потолок +. Все права защищены.</p>
-        <div class="footer-phone">📞 <a href="tel:+79147981371">+79147981371</a></div>
-        <p>📧 iskream8@gmail.com</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 60 55 Q 240 5 420 55 L 410 70 Q 240 25 70 70 Z" fill="url(#topStripe)"/>
+                        <path d="M 70 70 Q 240 30 410 70 L 400 82 Q 240 47 80 82 Z" fill="url(#silverStripe)"/>
+                        <path d="M 80 82 Q 240 50 400 82 L 395 88 Q 240 58 85 88 Z" fill="#0a1628" opacity="0.6"/>
+                        <path d="M 85 88 Q 240 60 395 88 L 380 100 Q 240 78 100 100 Z" fill="url(#orangeStripe)"/>
+                        <ellipse cx="240" cy="60" rx="80" ry="6" fill="#ffffff" opacity="0.5"/>
+                        <rect x="425" y="35" width="10" height="10" fill="#4fc3f7" transform="rotate(15 430 40)"/>
+                        <rect x="445" y="48" width="8" height="8" fill="#ff6b1a" transform="rotate(25 449 52)"/>
+                        <rect x="438" y="62" width="6" height="6" fill="#1e88e5" transform="rotate(35 441 65)"/>
+                        <rect x="455" y="30" width="5" height="5" fill="#4fc3f7" transform="rotate(45 457 32)"/>
+                        <text x="240" y="135" font-family="Arial Black, Impact, sans-serif" font-size="52" font-weight="900" text-anchor="middle" fill="url(#textGrad)" letter-spacing="2">ПОТОЛОК</text>
+                        <text x="425" y="135" font-family="Arial Black, Impact, sans-serif" font-size="58" font-weight="900" fill="url(#plusGrad)">+</text>
+                        <line x1="130" y1="152" x2="170" y2="152" stroke="#c5d3e0" stroke-width="1"/>
+                        <text x="240" y="156" font-family="Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#c5d3e0" letter-spacing="4">НАТЯЖНЫЕ ПОТОЛКИ</text>
+                        <line x1="310" y1="152" x2="350" y2="152" stroke="#c5d3e0" stroke-width="1"/>
+                    </svg>
+                </a>
+                <p class="footer-about">Натяжные потолки премиум-класса с гарантией 15 лет. Работаем с 2010 года.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <a href="#">О нас</a>
+                <a href="#gallery">Примеры работ</a>
+                <a href="#">Цены</a>
+                <a href="#reviews">Отзывы</a>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                <a href="mailto:info@potolok-plus.ru">info@potolok-plus.ru</a>
+                <p>Москва, ул. Примерная, 1</p>
+            </div>
+            <div class="footer-col">
+                <h4>Режим работы</h4>
+                <p>Пн-Пт: 9:00 - 21:00</p>
+                <p>Сб-Вс: 10:00 - 20:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Потолок+. Все права защищены.
+        </div>
     </div>
 </footer>
 
-<a href="tel:+79147981371" class="floating-call" title="Позвонить">📞</a>
-
-<div class="toast" id="toast">✓ Расчёт добавлен в заявку</div>
+<div class="modal" id="photoModal">
+    <button class="modal-close">✕</button>
+    <img class="modal-img" id="modalImg" src="" alt="">
+</div>
 
 <script>
-let currentCalc = {};
-
-function calculatePrice() {
-    const typeInput = document.querySelector('input[name="type"]:checked');
-    const type = parseFloat(typeInput.value);
-    const typeName = typeInput.dataset.name;
-    const area = parseFloat(document.getElementById('area').value) || 0;
-    const corners = parseFloat(document.getElementById('corners').value) || 4;
-    
-    const materialCost = type * area;
-    const extraCorners = Math.max(0, corners - 4) * 200;
-    
-    const extras = [];
-    let extrasCost = 0;
-    document.querySelectorAll('.extra:checked').forEach(cb => {
-        const price = parseFloat(cb.dataset.price);
-        const name = cb.dataset.name;
-        let cost = price;
-        let displayName = name;
-        if (cb.dataset.perMeter === 'true') {
-            const perimeter = 4 * Math.sqrt(area);
-            cost = price * perimeter;
-            displayName = name + ` (~${Math.round(perimeter)} м)`;
-        }
-        extras.push({ name: displayName, cost: Math.round(cost) });
-        extrasCost += cost;
-    });
-    
-    const total = materialCost + extraCorners + extrasCost;
-    
-    currentCalc = {
-        typeName, typePrice: type, area, corners,
-        materialCost: Math.round(materialCost + extraCorners),
-        extras, extrasCost: Math.round(extrasCost),
-        total: Math.round(total)
-    };
-    
-    const fmt = (n) => Math.round(n).toLocaleString('ru-RU') + ' ₽';
-    document.getElementById('totalPrice').textContent = fmt(total);
-    document.getElementById('materialPrice').textContent = fmt(materialCost + extraCorners);
-    document.getElementById('areaDisplay').textContent = area + ' м²';
-    document.getElementById('extrasPrice').textContent = fmt(extrasCost);
-    
-    if (document.getElementById('calcSummary').classList.contains('active')) {
-        renderSummary();
-    }
-}
-
-document.querySelectorAll('input[name="type"], #area, #corners, .extra').forEach(el => {
-    el.addEventListener('input', calculatePrice);
-    el.addEventListener('change', calculatePrice);
-});
-calculatePrice();
-
-function renderSummary() {
-    const fmt = (n) => n.toLocaleString('ru-RU') + ' ₽';
-    let html = `
-        <div class="calc-summary-row"><span>Тип потолка:</span><span><b>${currentCalc.typeName}</b> (${currentCalc.typePrice} ₽/м²)</span></div>
-        <div class="calc-summary-row"><span>Площадь:</span><span><b>${currentCalc.area} м²</b></span></div>
-        <div class="calc-summary-row"><span>Углов:</span><span><b>${currentCalc.corners}</b></span></div>
-        <div class="calc-summary-row"><span>Полотно + работа:</span><span>${fmt(currentCalc.materialCost)}</span></div>
-    `;
-    if (currentCalc.extras.length > 0) {
-        currentCalc.extras.forEach(e => {
-            html += `<div class="calc-summary-row"><span>+ ${e.name}:</span><span>${fmt(e.cost)}</span></div>`;
-        });
-    }
-    document.getElementById('summaryRows').innerHTML = html;
-    document.getElementById('summaryTotal').textContent = fmt(currentCalc.total);
-    
-    const calcText = `Тип: ${currentCalc.typeName}\nПлощадь: ${currentCalc.area} м²\nУглов: ${currentCalc.corners}\nПолотно+работа: ${currentCalc.materialCost} ₽\nДоп.опции: ${currentCalc.extras.map(e => `${e.name} = ${e.cost} ₽`).join('; ') || 'нет'}\nИТОГО: ${currentCalc.total} ₽`;
-    document.getElementById('calcData').value = calcText;
-}
-
-function sendToForm() {
-    document.getElementById('calcSummary').classList.add('active');
-    renderSummary();
-    document.getElementById('formTitle').textContent = 'Подтвердите заявку на замер';
-    document.getElementById('formSubtitle').textContent = 'Оставьте контакты — перезвоним за 15 минут и уточним детали';
-    document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
-    setTimeout(() => document.getElementById('userName').focus(), 800);
-}
-
-function editCalc() {
-    document.getElementById('calcSummary').classList.remove('active');
-    document.getElementById('formTitle').textContent = 'Получите расчёт стоимости';
-    document.getElementById('formSubtitle').textContent = 'Оставьте заявку — перезвоним за 15 минут и сделаем точный расчёт';
-    document.getElementById('calcData').value = '';
-    document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
-}
-
-function handleSubmit(e) {
-    e.preventDefault();
-    const name = document.getElementById('userName').value;
-    const phone = document.getElementById('userPhone').value;
-    const calcData = document.getElementById('calcData').value;
-    let message = `Заявка от ${name}\nТелефон: ${phone}`;
-    if (calcData) message += `\n\n--- РАСЧЁТ ИЗ КАЛЬКУЛЯТОРА ---\n${calcData}`;
-    console.log(message);
-    alert('Спасибо! Мы свяжемся с вами в ближайшее время.\n\n' + message);
-    e.target.reset();
-    document.getElementById('calcSummary').classList.remove('active');
-    document.getElementById('formTitle').textContent = 'Получите расчёт стоимости';
-    document.getElementById('formSubtitle').textContent = 'Оставьте заявку — перезвоним за 15 минут и сделаем точный расчёт';
-}
-
+// ========================================
+// ГАЛЕРЕЯ
+// ========================================
 const galleryItems = document.querySelectorAll('.gallery-item');
-const modal = document.getElementById('modal');
+const modal = document.getElementById('photoModal');
 const modalImg = document.getElementById('modalImg');
+
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        modalImg.src = img.src.replace('w=600', 'w=1600');
+        const bg = item.querySelector('.gallery-img').style.backgroundImage;
+        const url = bg.slice(5, -2);
+        modalImg.src = url.replace('w=800', 'w=1400');
         modal.classList.add('active');
     });
 });
-function closeModal() { modal.classList.remove('active'); }
-modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+modal.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+// ========================================
+// ЗАГРУЗКА ОТЗЫВОВ ИЗ JSON
+// ========================================
+
+// Получить инициалы из имени (Анна Никитина → АН)
+function getInitials(fullName) {
+    return fullName
+        .split(' ')
+        .map(n => n[0])
+        .slice(0, 2)
+        .join('')
+        .toUpperCase();
+}
+
+// Сгенерировать звёзды по рейтингу (5 → ★★★★★)
+function getStars(rating) {
+    const full = '★'.repeat(Math.floor(rating));
+    const empty = '☆'.repeat(5 - Math.floor(rating));
+    return full + empty;
+}
+
+// Экранирование HTML (защита от XSS)
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Рендер блока отзывов
+function renderReviews(data) {
+    const container = document.getElementById('reviewsContainer');
+    
+    const reviewsHTML = data.reviews.map(review => `
+        <div class="review-card">
+            <div class="review-source">2ГИС</div>
+            <div class="review-stars">${getStars(review.rating)}</div>
+            <div class="review-date">${escapeHtml(review.date)}</div>
+            <p class="review-text">"${escapeHtml(review.text)}"</p>
+            <div class="review-author">
+                <div class="review-avatar">${getInitials(review.author)}</div>
+                <div>
+                    <strong>${escapeHtml(review.author)}</strong>
+                    <span>${escapeHtml(review.city)}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    container.innerHTML = `
+        <div class="reviews-2gis-banner">
+            <div class="reviews-2gis-info">
+                <div class="reviews-2gis-logo">2ГИС</div>
+                <div class="reviews-2gis-text">
+                    <div class="reviews-2gis-rating">
+                        <div class="reviews-2gis-score">${data.rating.toFixed(1)}</div>
+                        <div class="reviews-2gis-stars">${getStars(Math.round(data.rating))}</div>
+                    </div>
+                    <div class="reviews-2gis-count">
+                        На основе <strong>${data.totalReviews} отзывов</strong> на 2ГИС
+                    </div>
+                </div>
+            </div>
+            <a href="${escapeHtml(data.link2gis)}" target="_blank" rel="noopener" class="reviews-2gis-btn">
+                Открыть 2ГИС →
+            </a>
+        </div>
+
+        <div class="reviews-grid">
+            ${reviewsHTML}
+        </div>
+
+        <div class="reviews-cta">
+            <a href="${escapeHtml(data.link2gis)}" target="_blank" rel="noopener" class="reviews-cta-btn">
+                Читать все отзывы на 2ГИС →
+            </a>
+        </div>
+    `;
+}
+
+// Рендер ошибки
+function renderError(message) {
+    document.getElementById('reviewsContainer').innerHTML = `
+        <div class="reviews-error">
+            <h3>⚠️ Не удалось загрузить отзывы</h3>
+            <p>${message}</p>
+        </div>
+    `;
+}
+
+// Загрузка отзывов из JSON
+async function loadReviews() {
+    try {
+        const response = await fetch('reviews.json?v=' + Date.now()); // отключаем кэш
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        // Валидация данных
+        if (!data.reviews || !Array.isArray(data.reviews)) {
+            throw new Error('Неверный формат данных');
+        }
+        
+        renderReviews(data);
+    } catch (error) {
+        console.error('Ошибка загрузки отзывов:', error);
+        renderError('Попробуйте обновить страницу позже.');
+    }
+}
+
+// Запускаем загрузку при готовности страницы
+document.addEventListener('DOMContentLoaded', loadReviews);
 </script>
 
 </body>

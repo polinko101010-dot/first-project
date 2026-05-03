@@ -606,19 +606,10 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
                 <select id="material">
                     <option value="standard">Стандартный (мат/глянец)</option>
                     <option value="satin">Сатиновый</option>
-                    <option value="premium">Премиум (тканевый)</option>
+                    
                 </select>
             </div>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="multilevel">
-                    <label for="multilevel">Двухуровневый потолок (+30% к стоимости)</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="led_strip">
-                    <label for="led_strip">Светодиодная подсветка по периметру (+300 руб/м.п.)</label>
-                </div>
-            </div>
+            
             <button type="button" class="btn-primary" onclick="calculateCost()" style="grid-column: 1 / -1; margin-top: 20px;">Рассчитать</button>
             <div class="calculator-result">
                 <p>Примерная стоимость: <span id="finalCost">0</span> ₽</p>
@@ -676,7 +667,7 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
                         <line x1="310" y1="152" x2="350" y2="152" stroke="#c5d3e0" stroke-width="1"/>
                     </svg>
                 </a>
-                <p class="footer-about">Натяжные потолки премиум-класса с гарантией 15 лет. Работаем с 2010 года.</p>
+                <p class="footer-about">Натяжные потолки с гарантией 10 лет. Работаем с 2025 года.</p>
             </div>
             <div class="footer-col">
                 <h4>Компания</h4>
@@ -693,12 +684,12 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
             </div>
             <div class="footer-col">
                 <h4>Режим работы</h4>
-                <p>Пн-Пт: 9:00 - 21:00</p>
-                <p>Сб-Вс: 10:00 - 20:00</p>
+                <p>Пн-Сб: 9:00 - 21:00</p>
+                
             </div>
         </div>
         <div class="footer-bottom">
-            © 2024 Потолок+. Все права защищены.
+            © 2026 Потолок+. Все права защищены.
         </div>
     </div>
 </footer>
@@ -756,7 +747,7 @@ function calculateCost() {
     let totalCost = 0;
 
     // Расчет за площадь
-    if (area > 0) {
+    if (area > 10) {
         totalCost += area * basePricePerSqM;
     }
 

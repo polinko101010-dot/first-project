@@ -722,8 +722,6 @@ function calculateCost() {
     const corners = parseInt(document.getElementById('corners').value);
     const lights = parseInt(document.getElementById('lights').value);
     const material = document.getElementById('material').value;
-    const isMultilevel = document.getElementById('multilevel').checked;
-    const hasLedStrip = document.getElementById('led_strip').checked;
 
     let basePricePerSqM = 1000; // Руб./м²
     let cornerPrice = 100; // Руб./угол
@@ -736,7 +734,7 @@ function calculateCost() {
             // basePricePerSqM = 1000; // Уже установлено
             break;
         case 'satin':
-             basePricePerSqM = 1100; // Уже установлено
+             basePricePerSqM = 1100; 
             break;
         
     }
@@ -744,32 +742,18 @@ function calculateCost() {
     let totalCost = 0;
 
     // Расчет за площадь
-    if (area > 10) {
+    if (area >= 10) {
         totalCost += area * basePricePerSqM;
     }
 
     // Доплата за углы (после 4-х бесплатных)
-    if (corners > 4) {
-        totalCost += (corners - 4) * cornerPrice;
-    } else if (corners < 4) {
-        totalCost += 0; // Минимум 4 угла, если меньше - не штрафуем
-    }
-
+    if (corners > 0) {
+        totalCost += corners * cornerPrice;
+    } 
 
     // Доплата за светильники
     if (lights > 0) {
         totalCost += lights * lightPrice;
-    }
-
-    // Доплата за двухуровневый потолок
-    if (isMultilevel) {
-        totalCost *= 1.30; // +30% к текущей стоимости
-    }
-
-    // Доплата за светодиодную подсветку (допустим, периметр помещения = 4 * sqrt(area))
-    if (hasLedStrip) {
-        const perimeter = 4 * Math.sqrt(area); // Простой расчет периметра для квадратной комнаты
-        totalCost += perimeter * ledStripPricePerMeter;
     }
 
     // Обновляем результат на странице

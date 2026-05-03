@@ -591,11 +591,11 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         <div class="calculator-form">
             <div class="form-group">
                 <label for="area">Площадь помещения, м²:</label>
-                <input type="number" id="area" value="10" min="1" step="0.1">
+                <input type="number" id="area" value="10" min="10" step="1">
             </div>
             <div class="form-group">
                 <label for="corners">Количество углов:</label>
-                <input type="number" id="corners" value="4" min="4" step="1">
+                <input type="number" id="corners" value="1" min="1" step="1">
             </div>
             <div class="form-group">
                 <label for="lights">Количество светильников:</label>
@@ -718,7 +718,7 @@ modal.addEventListener('click', () => {
 // КАЛЬКУЛЯТОР СТОИМОСТИ
 // ========================================
 function calculateCost() {
-    const area = parseFloat(document.getElementById('area').value);
+    const area = parseInt(document.getElementById('area').value);
     const corners = parseInt(document.getElementById('corners').value);
     const lights = parseInt(document.getElementById('lights').value);
     const material = document.getElementById('material').value;
@@ -734,7 +734,7 @@ function calculateCost() {
             // basePricePerSqM = 1000; // Уже установлено
             break;
         case 'satin':
-             basePricePerSqM = 1100; 
+             basePricePerSqM = 1000; 
             break;
         
     }

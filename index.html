@@ -726,25 +726,23 @@ function calculateCost() {
     const isMultilevel = document.getElementById('multilevel').checked;
     const hasLedStrip = document.getElementById('led_strip').checked;
 
-    let basePricePerSqM = 300; // Руб./м²
+    let basePricePerSqM = 1000; // Руб./м²
     let cornerPrice = 100; // Руб./угол
-    let lightPrice = 250; // Руб./светильник
-    let ledStripPricePerMeter = 300; // Руб./погонный метр LED-подсветки
+    let lightPrice = 600; // Руб./светильник
+    
 
     // Корректировка базовой цены в зависимости от материала
     switch (material) {
         case 'standard':
-            // basePricePerSqM = 300; // Уже установлено
+            // basePricePerSqM = 1000; // Уже установлено
             break;
         case 'satin':
-            basePricePerSqM = 350;
+             // basePricePerSqM = 1000; // Уже установлено
             break;
-        case 'premium':
-            basePricePerSqM = 500;
-            break;
+        
     }
 
-    let totalCost = 0;
+    let totalCost = 10;
 
     // Расчет за площадь
     if (area > 10) {

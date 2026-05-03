@@ -6,7 +6,6 @@
 <title>Потолок+ — Натяжные потолки премиум-класса</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 :root {
     --primary: #1e88e5;
     --primary-light: #4fc3f7;
@@ -22,16 +21,13 @@
     --2gis: #19b362;
     --2gis-dark: #0e8a48;
 }
-
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: var(--dark);
     line-height: 1.6;
     background: var(--white);
 }
-
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
 /* HEADER */
 header {
     position: fixed; top: 0; width: 100%;
@@ -41,15 +37,12 @@ header {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
-
 .logo { display: block; text-decoration: none; }
 .logo svg { height: 65px; width: auto; display: block; }
 .footer-logo svg { height: 75px; }
-
 .nav-links { display: flex; gap: 35px; list-style: none; }
 .nav-links a { color: var(--silver); text-decoration: none; font-weight: 500; transition: color 0.3s; }
 .nav-links a:hover { color: var(--accent); }
-
 .phone-btn {
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     color: white; padding: 12px 24px; border-radius: 50px;
@@ -57,7 +50,6 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .phone-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 107, 26, 0.5); }
-
 /* HERO */
 .hero {
     min-height: 100vh; display: flex; align-items: center;
@@ -110,14 +102,12 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(79, 195, 247, 0.3);
 }
-
 /* SECTIONS */
 section { padding: 100px 0; }
 .section-title { text-align: center; margin-bottom: 60px; }
 .section-title h2 { font-size: 42px; font-weight: 800; margin-bottom: 15px; color: var(--dark); }
 .section-title h2 span { color: var(--accent); }
 .section-title p { color: var(--gray); font-size: 18px; }
-
 /* ADVANTAGES */
 .advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
 .advantage-card {
@@ -136,7 +126,6 @@ section { padding: 100px 0; }
 }
 .advantage-card h3 { font-size: 20px; margin-bottom: 12px; color: var(--dark); }
 .advantage-card p { color: var(--gray); font-size: 15px; }
-
 /* GALLERY */
 .gallery { background: var(--light); }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -161,7 +150,6 @@ section { padding: 100px 0; }
     transition: opacity 0.3s, transform 0.3s;
 }
 .gallery-item:hover .gallery-zoom { opacity: 1; transform: scale(1); }
-
 /* MODAL */
 .modal {
     display: none; position: fixed; inset: 0;
@@ -178,7 +166,6 @@ section { padding: 100px 0; }
     display: flex; align-items: center; justify-content: center;
     font-size: 24px; cursor: pointer; border: none;
 }
-
 /* STAGES */
 .stages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; counter-reset: step; }
 .stage-card { text-align: center; position: relative; counter-increment: step; }
@@ -193,6 +180,108 @@ section { padding: 100px 0; }
 }
 .stage-card h3 { font-size: 22px; margin: -20px 0 12px; position: relative; color: var(--dark); }
 .stage-card p { color: var(--gray); }
+
+/* CALCULATOR */
+.calculator-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 40px;
+    background: var(--light);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.form-group label {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+.form-group input[type="number"],
+.form-group select {
+    padding: 12px 18px;
+    border: 1px solid var(--silver);
+    border-radius: 10px;
+    font-size: 16px;
+    color: var(--dark);
+    background: var(--white);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    outline: none;
+}
+.checkbox-group {
+    grid-column: 1 / -1; /* Занимает всю ширину */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    background-color: var(--white);
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: 1px solid var(--silver);
+}
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--dark);
+}
+.checkbox-item input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+.checkbox-item input[type="checkbox"]::before {
+    content: "✓";
+    font-size: 14px;
+    color: var(--white);
+    transform: scale(0);
+    transition: transform 0.2s;
+}
+.checkbox-item input[type="checkbox"]:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.checkbox-item input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+.checkbox-item label {
+    cursor: pointer;
+    font-weight: 500;
+}
+.calculator-result {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+}
+.calculator-result p {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+}
+.calculator-result span {
+    color: var(--accent);
+    font-size: 32px;
+}
 
 /* CTA */
 .cta {
@@ -225,7 +314,6 @@ section { padding: 100px 0; }
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .cta-form button:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 107, 26, 0.5); }
-
 /* REVIEWS - 2ГИС */
 .reviews-2gis-banner {
     display: flex; align-items: center; justify-content: space-between; gap: 40px;
@@ -257,7 +345,6 @@ section { padding: 100px 0; }
     transition: transform 0.3s, box-shadow 0.3s; white-space: nowrap;
 }
 .reviews-2gis-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(25, 179, 98, 0.5); }
-
 /* Карточки отзывов */
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 .review-card {
@@ -295,7 +382,6 @@ section { padding: 100px 0; }
     transition: all 0.3s;
 }
 .reviews-cta-btn:hover { background: var(--2gis); color: white; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(25, 179, 98, 0.4); }
-
 /* СОСТОЯНИЯ ЗАГРУЗКИ */
 .reviews-loading {
     text-align: center;
@@ -324,7 +410,6 @@ section { padding: 100px 0; }
     color: #991b1b;
 }
 .reviews-error h3 { margin-bottom: 10px; }
-
 /* FOOTER */
 footer { background: var(--dark); color: white; padding: 60px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
@@ -339,10 +424,9 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
     border-top: 1px solid rgba(197, 211, 224, 0.1);
     padding-top: 25px; text-align: center; color: var(--silver);
 }
-
 /* RESPONSIVE */
 @media (max-width: 968px) {
-    .hero-grid, .advantages-grid, .stages-grid, .reviews-grid, .footer-grid { grid-template-columns: 1fr; }
+    .hero-grid, .advantages-grid, .stages-grid, .reviews-grid, .footer-grid, .calculator-form { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .hero h1 { font-size: 36px; }
     .section-title h2, .cta h2 { font-size: 30px; }
@@ -352,6 +436,7 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
     .reviews-2gis-banner { flex-direction: column; text-align: center; padding: 30px 20px; }
     .reviews-2gis-info { flex-direction: column; }
     .reviews-2gis-score { font-size: 36px; }
+    .checkbox-group { grid-column: auto; } /* Отменяем полную ширину для мобильных */
 }
 @media (max-width: 600px) {
     .gallery-grid { grid-template-columns: 1fr; }
@@ -359,7 +444,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
 </style>
 </head>
 <body>
-
 <svg width="0" height="0" style="position:absolute">
     <defs>
         <linearGradient id="topStripe" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -390,7 +474,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         </linearGradient>
     </defs>
 </svg>
-
 <header>
     <div class="container">
         <nav>
@@ -416,13 +499,13 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
                 <li><a href="#advantages">Преимущества</a></li>
                 <li><a href="#gallery">Примеры работ</a></li>
                 <li><a href="#stages">Этапы</a></li>
+                <li><a href="#calculator">Калькулятор</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
             </ul>
             <a href="tel:+74951234567" class="phone-btn">📞 +7 (495) 123-45-67</a>
         </nav>
     </div>
 </header>
-
 <section class="hero">
     <div class="container">
         <div class="hero-grid">
@@ -434,13 +517,12 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
                     <div class="hero-feature">Монтаж за 1 день</div>
                     <div class="hero-feature">Без пыли и мусора</div>
                 </div>
-                <a href="#cta" class="btn-primary">Рассчитать стоимость →</a>
+                <a href="#calculator" class="btn-primary">Рассчитать стоимость →</a>
             </div>
             <div class="hero-image"></div>
         </div>
     </div>
 </section>
-
 <section id="advantages">
     <div class="container">
         <div class="section-title">
@@ -466,7 +548,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         </div>
     </div>
 </section>
-
 <section id="gallery" class="gallery">
     <div class="container">
         <div class="section-title">
@@ -474,19 +555,18 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
             <p>Реальные фото выполненных проектов</p>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
-            <div class="gallery-item"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1615875605825-5eb9bb5d52ac?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
+            <div class="gallery-item" data-full-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400"><div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800')"></div><div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div></div>
         </div>
     </div>
 </section>
-
 <section id="stages">
     <div class="container">
         <div class="section-title">
@@ -501,7 +581,52 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         </div>
     </div>
 </section>
-
+<!-- НОВЫЙ КАЛЬКУЛЯТОР СТОИМОСТИ -->
+<section id="calculator">
+    <div class="container">
+        <div class="section-title">
+            <h2>Калькулятор <span>стоимости</span></h2>
+            <p>Получите предварительный расчет стоимости вашего натяжного потолка</p>
+        </div>
+        <div class="calculator-form">
+            <div class="form-group">
+                <label for="area">Площадь помещения, м²:</label>
+                <input type="number" id="area" value="10" min="1" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="corners">Количество углов:</label>
+                <input type="number" id="corners" value="4" min="4" step="1">
+            </div>
+            <div class="form-group">
+                <label for="lights">Количество светильников:</label>
+                <input type="number" id="lights" value="2" min="0" step="1">
+            </div>
+            <div class="form-group">
+                <label for="material">Тип материала:</label>
+                <select id="material">
+                    <option value="standard">Стандартный (мат/глянец)</option>
+                    <option value="satin">Сатиновый</option>
+                    <option value="premium">Премиум (тканевый)</option>
+                </select>
+            </div>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="multilevel">
+                    <label for="multilevel">Двухуровневый потолок (+30% к стоимости)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="led_strip">
+                    <label for="led_strip">Светодиодная подсветка по периметру (+300 руб/м.п.)</label>
+                </div>
+            </div>
+            <button type="button" class="btn-primary" onclick="calculateCost()" style="grid-column: 1 / -1; margin-top: 20px;">Рассчитать</button>
+            <div class="calculator-result">
+                <p>Примерная стоимость: <span id="finalCost">0</span> ₽</p>
+                <p style="font-size: 14px; color: var(--gray); margin-top: 10px;">*Расчет является предварительным. Точную стоимость определит замерщик.</p>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="cta">
     <div class="cta">
         <h2>Получите <span>бесплатный замер</span></h2>
@@ -513,7 +638,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         </form>
     </div>
 </section>
-
 <!-- ОТЗЫВЫ - ДИНАМИЧЕСКАЯ ЗАГРУЗКА -->
 <section id="reviews">
     <div class="container">
@@ -521,7 +645,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
             <h2>Отзывы <span>клиентов</span></h2>
             <p>Реальные оценки на 2ГИС</p>
         </div>
-
         <!-- Контейнер для динамического контента -->
         <div id="reviewsContainer">
             <div class="reviews-loading">
@@ -531,7 +654,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         </div>
     </div>
 </section>
-
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -580,12 +702,10 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         </div>
     </div>
 </footer>
-
 <div class="modal" id="photoModal">
     <button class="modal-close">✕</button>
-    <img class="modal-img" id="modalImg" src="" alt="">
+    <img class="modal-img" id="modalImg" src="" alt="Натяжной потолок">
 </div>
-
 <script>
 // ========================================
 // ГАЛЕРЕЯ
@@ -593,24 +713,96 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
 const galleryItems = document.querySelectorAll('.gallery-item');
 const modal = document.getElementById('photoModal');
 const modalImg = document.getElementById('modalImg');
-
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
-        const bg = item.querySelector('.gallery-img').style.backgroundImage;
-        const url = bg.slice(5, -2);
-        modalImg.src = url.replace('w=800', 'w=1400');
+        const fullImgUrl = item.dataset.fullImg; // Получаем URL из data-full-img
+        modalImg.src = fullImgUrl;
         modal.classList.add('active');
     });
 });
-
 modal.addEventListener('click', () => {
     modal.classList.remove('active');
 });
 
 // ========================================
+// КАЛЬКУЛЯТОР СТОИМОСТИ
+// ========================================
+function calculateCost() {
+    const area = parseFloat(document.getElementById('area').value);
+    const corners = parseInt(document.getElementById('corners').value);
+    const lights = parseInt(document.getElementById('lights').value);
+    const material = document.getElementById('material').value;
+    const isMultilevel = document.getElementById('multilevel').checked;
+    const hasLedStrip = document.getElementById('led_strip').checked;
+
+    let basePricePerSqM = 300; // Руб./м²
+    let cornerPrice = 100; // Руб./угол
+    let lightPrice = 250; // Руб./светильник
+    let ledStripPricePerMeter = 300; // Руб./погонный метр LED-подсветки
+
+    // Корректировка базовой цены в зависимости от материала
+    switch (material) {
+        case 'standard':
+            // basePricePerSqM = 300; // Уже установлено
+            break;
+        case 'satin':
+            basePricePerSqM = 350;
+            break;
+        case 'premium':
+            basePricePerSqM = 500;
+            break;
+    }
+
+    let totalCost = 0;
+
+    // Расчет за площадь
+    if (area > 0) {
+        totalCost += area * basePricePerSqM;
+    }
+
+    // Доплата за углы (после 4-х бесплатных)
+    if (corners > 4) {
+        totalCost += (corners - 4) * cornerPrice;
+    } else if (corners < 4) {
+        totalCost += 0; // Минимум 4 угла, если меньше - не штрафуем
+    }
+
+
+    // Доплата за светильники
+    if (lights > 0) {
+        totalCost += lights * lightPrice;
+    }
+
+    // Доплата за двухуровневый потолок
+    if (isMultilevel) {
+        totalCost *= 1.30; // +30% к текущей стоимости
+    }
+
+    // Доплата за светодиодную подсветку (допустим, периметр помещения = 4 * sqrt(area))
+    if (hasLedStrip) {
+        const perimeter = 4 * Math.sqrt(area); // Простой расчет периметра для квадратной комнаты
+        totalCost += perimeter * ledStripPricePerMeter;
+    }
+
+    // Обновляем результат на странице
+    document.getElementById('finalCost').textContent = Math.round(totalCost).toLocaleString('ru-RU');
+}
+
+// Вызываем calculateCost при загрузке страницы для начального значения
+document.addEventListener('DOMContentLoaded', calculateCost);
+
+// Подключаем слушателей событий для мгновенного пересчета
+document.getElementById('area').addEventListener('input', calculateCost);
+document.getElementById('corners').addEventListener('input', calculateCost);
+document.getElementById('lights').addEventListener('input', calculateCost);
+document.getElementById('material').addEventListener('change', calculateCost);
+document.getElementById('multilevel').addEventListener('change', calculateCost);
+document.getElementById('led_strip').addEventListener('change', calculateCost);
+
+
+// ========================================
 // ЗАГРУЗКА ОТЗЫВОВ ИЗ JSON
 // ========================================
-
 // Получить инициалы из имени (Анна Никитина → АН)
 function getInitials(fullName) {
     return fullName
@@ -620,25 +812,23 @@ function getInitials(fullName) {
         .join('')
         .toUpperCase();
 }
-
 // Сгенерировать звёзды по рейтингу (5 → ★★★★★)
 function getStars(rating) {
     const full = '★'.repeat(Math.floor(rating));
-    const empty = '☆'.repeat(5 - Math.floor(rating));
-    return full + empty;
+    // Привел к нормальному виду, чтобы не было "★★★☆☆" вместо "★★★"
+    // const empty = '☆'.repeat(5 - Math.floor(rating)); 
+    // return full + empty;
+    return full;
 }
-
 // Экранирование HTML (защита от XSS)
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
 }
-
 // Рендер блока отзывов
 function renderReviews(data) {
     const container = document.getElementById('reviewsContainer');
-    
     const reviewsHTML = data.reviews.map(review => `
         <div class="review-card">
             <div class="review-source">2ГИС</div>
@@ -654,38 +844,32 @@ function renderReviews(data) {
             </div>
         </div>
     `).join('');
-
     container.innerHTML = `
         <div class="reviews-2gis-banner">
             <div class="reviews-2gis-info">
                 <div class="reviews-2gis-logo">2ГИС</div>
-                <div class="reviews-2gis-text">
-                    <div class="reviews-2gis-rating">
+                <div class="reviews-2gis-rating">
                         <div class="reviews-2gis-score">${data.rating.toFixed(1)}</div>
-                        <div class="reviews-2gis-stars">${getStars(Math.round(data.rating))}</div>
+                        <div class="reviews-2gis-stars">${'★'.repeat(Math.round(data.rating))}</div>
                     </div>
                     <div class="reviews-2gis-count">
                         На основе <strong>${data.totalReviews} отзывов</strong> на 2ГИС
                     </div>
                 </div>
+                <a href="${escapeHtml(data.link2gis)}" target="_blank" rel="noopener" class="reviews-2gis-btn">
+                    Открыть 2ГИС →
+                </a>
             </div>
-            <a href="${escapeHtml(data.link2gis)}" target="_blank" rel="noopener" class="reviews-2gis-btn">
-                Открыть 2ГИС →
-            </a>
-        </div>
-
-        <div class="reviews-grid">
-            ${reviewsHTML}
-        </div>
-
-        <div class="reviews-cta">
-            <a href="${escapeHtml(data.link2gis)}" target="_blank" rel="noopener" class="reviews-cta-btn">
-                Читать все отзывы на 2ГИС →
-            </a>
-        </div>
-    `;
+            <div class="reviews-grid">
+                ${reviewsHTML}
+            </div>
+            <div class="reviews-cta">
+                <a href="${escapeHtml(data.link2gis)}" target="_blank" rel="noopener" class="reviews-cta-btn">
+                    Читать все отзывы на 2ГИС →
+                </a>
+            </div>
+        `;
 }
-
 // Рендер ошибки
 function renderError(message) {
     document.getElementById('reviewsContainer').innerHTML = `
@@ -695,33 +879,26 @@ function renderError(message) {
         </div>
     `;
 }
-
 // Загрузка отзывов из JSON
 async function loadReviews() {
     try {
         const response = await fetch('reviews.json?v=' + Date.now()); // отключаем кэш
-        
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-        
         const data = await response.json();
-        
         // Валидация данных
         if (!data.reviews || !Array.isArray(data.reviews)) {
             throw new Error('Неверный формат данных');
         }
-        
         renderReviews(data);
     } catch (error) {
         console.error('Ошибка загрузки отзывов:', error);
         renderError('Попробуйте обновить страницу позже.');
     }
 }
-
 // Запускаем загрузку при готовности страницы
 document.addEventListener('DOMContentLoaded', loadReviews);
 </script>
-
 </body>
 </html>

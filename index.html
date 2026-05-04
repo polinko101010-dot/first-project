@@ -52,35 +52,62 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .phone-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 107, 26, 0.5); }
 /* HERO */
 .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    justify-content: center; /* Выравнивает элементы по центру по горизонтали */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;       /* Центрирует .container по вертикали */
+    justify-content: center;   /* Центрирует .container по горизонтали */
     background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 50%, var(--primary-dark) 100%);
-    padding: 100px 0 60px; position: relative; overflow: hidden;
+    padding: 100px 0 60px;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    text-align: center; /* Центрирует блочные элементы, если их ширина меньше родителя (например, max-width),
+                            а также инлайновые элементы (текст). */
+}
+
+.hero-content { /* Новый класс для содержимого hero */
+    max-width: 800px; /* Ограничиваем максимальную ширину для лучшей читаемости */
+    margin: 0 auto;   /* Центрируем hero-content внутри .container */
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
     color: var(--white);
 }
-.hero::before {
-    content: ''; position: absolute; top: -50%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(30, 136, 229, 0.3), transparent);
-    border-radius: 50%;
-}
-.hero::after {
-    content: ''; position: absolute; bottom: -30%; left: -10%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(255, 107, 26, 0.2), transparent);
-    border-radius: 50%;
-}
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; position: relative; z-index: 1; margin: 0 auto;}
-.hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: var(--white); }
+
 .hero h1 span {
     background: linear-gradient(135deg, var(--primary-light), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-.hero p { font-size: 19px; color: var(--silver); margin-bottom: 35px; }
-.hero-features { display: flex; gap: 30px; margin-bottom: 35px; flex-wrap: wrap; }
-.hero-feature { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--white); }
+
+.hero p {
+    font-size: 19px;
+    color: var(--silver);
+    margin-bottom: 35px;
+}
+
+.hero-features {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем функциональные особенности */
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--white);
+}
 .hero-feature::before {
     content: '✓'; width: 28px; height: 28px;
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
@@ -504,19 +531,16 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
 </header>
 <section class="hero">
     <div class="container">
-        <div class="hero-grid">
-            <div>
-                <div class="section-title">
-                <h1> <span> Натяжные потолки </span> за 1 день </h1>
-                <p>Установим идеальный потолок в вашей квартире за один день. Гарантия 10 лет, замер бесплатно.</p>
-                <div class="hero-features">
-                    <div class="hero-feature">Гарантия 10 лет</div>
-                    <div class="hero-feature">Монтаж за 1 день</div>
-                    <div class="hero-feature">Без пыли и мусора</div>
-                </div>
-                <a href="#calculator" class="btn-primary">Рассчитать стоимость →</a>
+        <!-- class="section-title" перемещаем сюда или на общую обертку контента hero -->
+        <div class="hero-content"> <!-- Добавим новый div для всего контента hero -->
+            <h1> <span> Натяжные потолки </span> за 1 день </h1>
+            <p>Установим идеальный потолок в вашей квартире за один день. Гарантия 10 лет, замер бесплатно.</p>
+            <div class="hero-features">
+                <div class="hero-feature">Гарантия 10 лет</div>
+                <div class="hero-feature">Монтаж за 1 день</div>
+                <div class="hero-feature">Без пыли и мусора</div>
             </div>
-            </div>
+            <a href="#calculator" class="btn-primary">Рассчитать стоимость →</a>
         </div>
     </div>
 </section>

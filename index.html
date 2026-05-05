@@ -174,20 +174,38 @@ section { padding: 100px 0; }
 }
 .gallery-item:hover .gallery-zoom { opacity: 1; transform: scale(1); }
 /* MODAL */
-.modal {
-    display: none; position: fixed; inset: 0;
-    background: rgba(10, 22, 40, 0.95); z-index: 2000;
-    align-items: center; justify-content: center;
-    padding: 20px; cursor: pointer;
+#formModal .modal-content-wrapper {
+    background: var(--white); /* Или любой другой фон для формы */
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 600px; /* Ограничьте ширину формы */
+    width: 90%; /* Адаптивная ширина */
+    height: 600px; /* Задайте высоту, чтобы форма помещалась */
+    max-height: 90vh; /* Максимальная высота */
+    display: flex; /* Чтобы iframe растянулся */
 }
-.modal.active { display: flex; }
-.modal-img { max-width: 90%; max-height: 90vh; border-radius: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
-.modal-close {
-    position: absolute; top: 30px; right: 30px;
-    width: 50px; height: 50px;
-    background: white; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; cursor: pointer; border: none;
+
+#googleFormIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px; /* Немного закруглим углы iframe */
+}
+
+/* Возможно, нужно будет скорректировать стили .modal-close для этого окна, если оно будет появляться не там, где надо */
+#formModal .modal-close {
+    top: 15px;
+    right: 15px;
+    z-index: 2001; /* Убедимся, что кнопка закрытия над формой */
+}
+
+/* Это для адаптивности, если форма слишком широкая на мобильных */
+@media (max-width: 768px) {
+    #formModal .modal-content-wrapper {
+        padding: 15px;
+        width: 95%;
+        height: 90vh; /* Модалка займет почти весь экран по высоте */
+    }
 }
 /* STAGES */
 .stages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; counter-reset: step; }
@@ -572,7 +590,7 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
 <section id="gallery" class="gallery">
     <div class="container">
         <div class="section-title">
-            <h2>Примеры наших <span>работ</span></h2>
+            <h2>Примеры моих <span>работ</span></h2>
             <p>Реальные фото выполненных проектов</p>
         </div>
         <div class="gallery-grid">
@@ -667,14 +685,20 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
 <section id="cta">
     <div class="cta">
         <h2>Получите <span>бесплатный замер</span></h2>
-        <p>Оставьте заявку и с вами свяжутся в ближайшее время</p>
-        <form class="cta-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="tel" placeholder="Телефон" required>
-            <button type="submit">Получить расчёт</button>
-        </form>
+        <p>Оставьте заявку и наш специалист свяжется с вами в ближайшее время</p>
+        <!-- Изменяем форму на кнопку, которая будет открывать модальное окно -->
+        <button class="btn-primary open-form-modal">Получить расчёт</button>
     </div>
 </section>
+
+<!-- Добавьте новый div для модального окна формы, например, после существующего #photoModal -->
+<div class="modal" id="formModal">
+    <button class="modal-close">✕</button>
+    <div class="modal-content-wrapper">
+        <!-- Здесь будет iframe с Google Формой -->
+        <iframe id="googleFormIframe" src="" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+    </div>
+</div>
 <!-- ОТЗЫВЫ - ДИНАМИЧЕСКАЯ ЗАГРУЗКА -->
 <section id="reviews">
     <div class="container">
@@ -816,7 +840,36 @@ document.getElementById('corners').addEventListener('input', calculateCost);
 document.getElementById('lights').addEventListener('input', calculateCost);
 document.getElementById('material').addEventListener('change', calculateCost);
 
+// ========================================
+// ФОРМА GOOGLE В МОДАЛЬНОМ ОКНЕ
+// ========================================
+const openFormModalBtn = document.querySelector('.open-form-modal');
+const formModal = document.getElementById('formModal');
+const formModalCloseBtn = formModal.querySelector('.modal-close');
+const googleFormIframe = document.getElementById('googleFormIframe');
 
+// !!! Вставьте сюда URL вашей Google Формы, который вы скопировали из iframe src !!!
+const GOOGLE_FORM_URL = "https://forms.gle/3hYiTzC7G3jsd2ZJ9/viewform?embedded=true";
+
+openFormModalBtn.addEventListener('click', () => {
+    googleFormIframe.src = GOOGLE_FORM_URL; // Загружаем форму при открытии
+    formModal.classList.add('active');
+});
+
+formModalCloseBtn.addEventListener('click', () => {
+    formModal.classList.remove('active');
+    googleFormIframe.src = ""; // Очищаем src, чтобы форма не продолжала работать в фоне
+});
+
+// Также можно закрывать модальное окно при клике вне содержимого
+formModal.addEventListener('click', (e) => {
+    if (e.target === formModal) { // Если клик был прямо по фону модального окна
+        formModal.classList.remove('active');
+        googleFormIframe.src = "";
+    }
+});
+
+    
 // ========================================
 // ЗАГРУЗКА ОТЗЫВОВ ИЗ JSON
 // ========================================

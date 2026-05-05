@@ -727,21 +727,6 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
         <button class="btn-primary open-form-modal">Получить расчёт</button>
     </div>
 </section>
-<!-- Модальное окно для галереи -->
-<div class="modal" id="photoModal">
-    <button class="modal-close">✕</button>
-    <img class="modal-img" id="modalImg" src="" alt="Натяжной потолок">
-</div>
-
-<!-- НОВОЕ модальное окно для формы -->
-<div class="modal" id="formModal">
-    <!-- Кнопка закрытия модального окна -->
-    <button class="modal-close">✕</button>
-    <!-- Контент модального окна - тут будет Google форма -->
-    <div class="modal-content-wrapper">
-        <iframe id="googleFormIframe" src="" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true">Загрузка…</iframe>
-    </div>
-</div>
     
 <!-- ОТЗЫВЫ - ДИНАМИЧЕСКАЯ ЗАГРУЗКА -->
 <section id="reviews">
@@ -811,6 +796,15 @@ footer { background: var(--dark); color: white; padding: 60px 0 30px; }
     <button class="modal-close">✕</button>
     <img class="modal-img" id="modalImg" src="" alt="Натяжной потолок">
 </div>
+    <!-- Модальное окно для формы -->
+    <div class="modal" id="formModal">
+        <!-- Кнопка закрытия модального окна -->
+        <button class="modal-close">✕</button>
+        <!-- Контент модального окна - тут будет Google форма -->
+        <div class="modal-content-wrapper">
+            <iframe id="googleFormIframe" src="" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true">Загрузка…</iframe>
+        </div>
+    </div>
 <script>
 // ========================================
 // ГАЛЕРЕЯ

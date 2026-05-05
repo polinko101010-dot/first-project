@@ -174,43 +174,57 @@ section { padding: 100px 0; }
 }
 .gallery-item:hover .gallery-zoom { opacity: 1; transform: scale(1); }
 /* MODAL */
-/* CTA - для центрирования кнопки */
-.cta-form-wrapper { /* Добавьте этот стиль */
-    text-align: center; /* Центрируем кнопку внутри wrapper */
-    margin-top: 35px; /* Отступ сверху от параграфа */
+/* Основные стили для ВСЕХ модальных окон (у вас это уже есть) */
+.modal {
+    display: none; /* <-- ЭТО КЛЮЧЕВО! Скрывает окно по умолчанию. */
+    position: fixed; /* <-- ЭТО КЛЮЧЕВО! Позволяет окну оставаться на месте при прокрутке и перекрывать контент. */
+    inset: 0; /* <-- То же что и top: 0; right: 0; bottom: 0; left: 0;. Растягивает модальное окно на весь экран. */
+    background: rgba(10, 22, 40, 0.95); /* Полупрозрачный фон */
+    z-index: 2000; /* Убедитесь, что это значение достаточно большое, чтобы перекрывать весь основной контент. */
+    align-items: center; /* Центрирует содержимое по вертикали (Flexbox) */
+    justify-content: center; /* Центрирует содержимое по горизонтали (Flexbox) */
+    padding: 20px; /* Небольшие отступы по краям окна */
+    cursor: pointer; /* Для индикации, что можно кликнуть для закрытия (по фону) */
 }
 
-/* Стили для модального окна формы */
+/* Стиль для активного (видимого) модального окна (у вас это уже есть) */
+.modal.active {
+    display: flex; /* <-- ЭТО КЛЮЧЕВО! Делает окно видимым и применяет Flexbox */
+}
+
+/* Стили для обёртки вокруг iframe внутри модального окна */
 #formModal .modal-content-wrapper {
     background: var(--white);
     padding: 20px;
     border-radius: 20px;
-    max-width: 600px;
-    width: 90%;
-    height: 600px;
-    max-height: 90vh; /* Максимальная высота, чтобы не выходило за экран */
-    display: flex; /* Делает этот div флекс-контейнером */
-    flex-direction: column; /* Элементы внутри будут располагаться вертикально */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Добавим тень */
-    position: relative; /* Чтобы кнопка закрытия была относительно него */
+    max-width: 600px; /* Максимальная ширина самого контейнера формы */
+    width: 90%; /* Ширина контейнера относительно родителя */
+    height: 600px; /* Фиксированная высота для iframe */
+    max-height: 90vh; /* Максимальная высота, чтобы не выходило за пределы viewport */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    position: relative; /* Важно для позиционирования кнопки закрытия */
+    cursor: default; /* Возвращаем курсор по умолчанию для контента */
 }
 
+/* Стили для iframe */
 #googleFormIframe {
     flex-grow: 1; /* iFrame займет все доступное пространство в modal-content-wrapper */
     width: 100%;
-    height: 100%; /* Убедимся, что высоту тоже занимает */
+    height: 100%;
     border: none;
     border-radius: 15px;
 }
 
-/* Стили для кнопки закрытия */
+/* Стиль для кнопки закрытия */
 #formModal .modal-close {
-    position: absolute; /* Делаем кнопку абсолютно позиционированной */
-    top: -15px; /* Поднимем ее немного над углом модального окна */
-    right: -15px; /* Сдвинем вправо */
+    position: absolute;
+    top: -15px;
+    right: -15px;
     width: 40px;
     height: 40px;
-    background: var(--accent); /* Цвет акцента для кнопки */
+    background: var(--accent);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -220,28 +234,26 @@ section { padding: 100px 0; }
     cursor: pointer;
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 2002; /* Выше чем все остальное */
+    z-index: 2002;
+    transition: transform 0.2s ease-in-out;
+}
+#formModal .modal-close:hover {
+    transform: scale(1.1);
 }
 
-/* Адаптивность для модального окна формы */
+/* Адаптивность */
 @media (max-width: 768px) {
     #formModal .modal-content-wrapper {
         padding: 15px;
         width: 95%;
-        max-width: 400px; /* Немного уменьшим max-width для узких экранов */
-        height: auto; /* Высота будет зависеть от контента */
-        max-height: 90vh;
+        max-width: 400px;
     }
     #formModal .modal-close {
-        top: 5px; /* Чуть ближе к углу на мобильных */
+        top: 5px;
         right: 5px;
         width: 30px;
         height: 30px;
         font-size: 16px;
-    }
-    /* Если Google форма не совсем хорошо масштабируется, можно ее уменьшить, но Google формы обычно адаптивны */
-    #googleFormIframe {
-        min-height: 400px; /* Минимальная высота для удобства */
     }
 }
 /* STAGES */
